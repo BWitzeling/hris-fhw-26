@@ -18,7 +18,7 @@ window.QUIZ_DATA = {
   resultPrizeText: "Holen Sie sich jetzt Ihre Manner-Schnitte bei unserem Messeteam ab.",
   studyText: "Praxisnahes Wissen für Menschen, die HR und Organisationen aktiv gestalten wollen.",
   studyUrl: "https://www.fh-wien.ac.at/fachhochschule/studienbereiche/human-resources-organization/",
-  qrPlaceholderLabel: "QR-CODE\nPLATZHALTER",
+  newsletterUrl: "https://www.fh-wien.ac.at/newsletter-informieren-und-studieren-anmeldung/",
 
   questions: [
     {

@@ -14,21 +14,15 @@ Für eine schnelle Vorschau `index.html` im Browser öffnen. Für eine realität
 - `assets/fhwien-logo.png`: Webversion des Logos
 - `assets/farbstrahl-original.jpg`: Farbstrahl am unteren Seitenrand
 - `assets/hris-startscreen.jpg`: browseroptimierte Startscreen-Version des bereitgestellten TIFF-Motivs
-- `assets/qr-code-platzhalter.png`: derzeitiger QR-Platzhalter
+- `assets/newsletter-qr.png`: QR-Code zur Newsletter-Anmeldung
 
 Das TIFF-Original `40_FINAL 38_0676_Banner RGB.tif` bleibt lokal erhalten, wird wegen seiner Dateigröße aber nicht mit der Website veröffentlicht.
 Das lokal abgelegte Hernstein-Motiv dient nur als Gestaltungsreferenz und wird ebenfalls nicht veröffentlicht.
 Die CMYK-Quelldatei im Ordner `source-assets` bleibt ebenfalls ausschließlich lokal erhalten.
 
-## QR-Code vor Veröffentlichung ersetzen
+## Links pflegen
 
-Der derzeitige QR-Code ist absichtlich unscharf und deutlich als Platzhalter markiert. Vor dem Messeeinsatz:
-
-1. Die finale QR-Grafik als `assets/qr-code-platzhalter.png` speichern.
-2. In `css/styles.css` bei `.qr-placeholder__image` die Angaben `opacity` und `filter` entfernen.
-3. In `index.html` das Element `.qr-placeholder__label` sowie den Hinweistext unterhalb des QR-Codes entfernen.
-
-Der zugehörige Link für den Button „HR-Studiengänge entdecken“ wird in `js/quiz-data.js` unter `studyUrl` gepflegt.
+Der Link zur Newsletter-Anmeldung wird in `js/quiz-data.js` unter `newsletterUrl` gepflegt. Wenn sich die URL ändert, muss zusätzlich der QR-Code in `assets/newsletter-qr.png` neu erzeugt werden. Der Link für „HR-Studiengänge entdecken“ wird unter `studyUrl` gepflegt.
 
 ## Auf GitHub Pages veröffentlichen
 

@@ -623,38 +623,32 @@ a {
   margin: 26px 0 20px;
 }
 
-.qr-placeholder {
-  position: relative;
-  display: grid;
+.qr-link {
+  display: block;
   width: min(230px, 72vw);
-  aspect-ratio: 1;
-  place-items: center;
-  overflow: hidden;
+  padding: 10px;
   background: #fff;
-  border: 2px dashed #9aa7b9;
+  border: 1px solid var(--border);
   border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(9, 31, 69, 0.1);
+  transition: box-shadow 180ms ease, transform 180ms ease;
 }
 
-.qr-placeholder__image {
+.qr-link:hover {
+  box-shadow: 0 14px 30px rgba(9, 31, 69, 0.16);
+  transform: translateY(-2px);
+}
+
+.qr-link:focus-visible {
+  outline: 3px solid var(--fhw-blue);
+  outline-offset: 4px;
+}
+
+.qr-code {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.12;
-  filter: blur(4px);
-}
-
-.qr-placeholder__label {
-  position: absolute;
-  padding: 12px 14px;
-  color: var(--fhw-blue);
-  background: rgba(255, 255, 255, 0.96);
-  border: 2px solid var(--fhw-blue);
-  border-radius: 8px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-align: center;
-  white-space: pre-line;
+  height: auto;
+  aspect-ratio: 1;
 }
 
 .qr-note {

@@ -11,7 +11,7 @@
   <title>HR-Quiz | FHWien der WKW</title>
 
   <link rel="preload" as="image" href="assets/hris-startscreen.jpg">
-  <link rel="stylesheet" href="css/styles.css?v=20260818-3">
+  <link rel="stylesheet" href="css/styles.css?v=20260818-4">
   <script src="js/quiz-data.js" defer></script>
   <script src="js/quiz.js" defer></script>
 </head>
@@ -136,11 +136,10 @@
           </ul>
 
           <div class="qr-area">
-            <div class="qr-placeholder" aria-label="Platzhalter für einen noch zu ersetzenden QR-Code">
-              <img class="qr-placeholder__image" src="assets/qr-code-platzhalter.png" alt="" aria-hidden="true">
-              <span id="qrPlaceholderLabel" class="qr-placeholder__label">QR-CODE<br>PLATZHALTER</span>
-            </div>
-            <p class="qr-note">Der finale QR-Code wird vor der Messe ergänzt.</p>
+            <a id="newsletterLink" class="qr-link" href="https://www.fh-wien.ac.at/newsletter-informieren-und-studieren-anmeldung/" target="_blank" rel="noopener noreferrer" aria-label="Newsletter-Anmeldung der FHWien der WKW öffnen">
+              <img class="qr-code" src="assets/newsletter-qr.png" alt="QR-Code zur Newsletter-Anmeldung der FHWien der WKW" width="600" height="600">
+            </a>
+            <p class="qr-note">QR-Code scannen und für den Newsletter „Informieren &amp; studieren“ anmelden.</p>
           </div>
 
           <a id="studyLink" class="text-link" href="https://www.fh-wien.ac.at/fachhochschule/studienbereiche/human-resources-organization/" target="_blank" rel="noopener noreferrer">

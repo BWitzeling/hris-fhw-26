@@ -52,7 +52,6 @@
     setText("resultPrizeTitle", data.resultPrizeTitle);
     setText("resultPrizeText", data.resultPrizeText);
     setText("studyText", data.studyText);
-    setText("qrPlaceholderLabel", data.qrPlaceholderLabel);
 
     const introSteps = document.getElementById("introSteps");
     introSteps.replaceChildren();
@@ -64,6 +63,9 @@
 
     const studyLink = document.getElementById("studyLink");
     studyLink.href = data.studyUrl;
+
+    const newsletterLink = document.getElementById("newsletterLink");
+    newsletterLink.href = data.newsletterUrl;
   }
 
   function enterQuiz() {
