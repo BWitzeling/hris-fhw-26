@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="de-AT">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#102d5d">
+  <meta name="description" content="Das HR-Quiz der FHWien der WKW auf der HR Inside Summit 2026.">
+  <meta property="og:title" content="HR-Quiz | FHWien der WKW">
+  <meta property="og:description" content="HR gestalten. Menschen entwickeln. Organisationen bewegen.">
+  <meta property="og:type" content="website">
+  <title>HR-Quiz | FHWien der WKW</title>
+
+  <link rel="preload" as="image" href="assets/hris-startscreen.jpg">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/quiz-data.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Zum Inhalt springen</a>
+
+  <section id="splashScreen" class="splash" aria-labelledby="splashTitle">
+    <div class="splash__canvas">
+      <div class="splash__visual">
+        <img class="splash__photo" src="assets/hris-startscreen.jpg" alt="" width="2219" height="2400">
+        <img class="splash__brand" src="assets/fhwien-logo.png" alt="FHWien der WKW" width="497" height="633">
+      </div>
+      <div class="splash__content">
+        <h1 id="splashTitle">Die führende Fachhochschule für Management und Kommunikation.</h1>
+        <button id="enterQuizBtn" class="splash__button" type="button">
+          Quiz starten <span aria-hidden="true">›</span>
+        </button>
+      </div>
+      <div class="splash__farbstrahl" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <div id="app" class="site-shell" inert>
+    <header class="site-header">
+      <a class="brand" href="https://www.fh-wien.ac.at/" target="_blank" rel="noopener noreferrer" aria-label="FHWien der WKW – Website öffnen">
+        <img src="assets/fhwien-logo.png" alt="FHWien der WKW">
+      </a>
+      <div class="site-header__title">
+        <span id="eventLabelHeader">HR Inside Summit 2026</span>
+        <strong>HR-Quiz</strong>
+      </div>
+      <button id="restartTopBtn" class="button button--ghost" type="button" title="Quiz neu starten">
+        Neu starten <span aria-hidden="true">↻</span>
+      </button>
+    </header>
+
+    <main id="mainContent" class="main-content">
+      <section id="intro" class="intro-grid" aria-labelledby="heroTitle">
+        <div class="hero">
+          <p class="eyebrow">Human Resources &amp; Organization</p>
+          <h1 id="heroTitle">Für alle, die HR nicht nur verwalten, sondern gestalten.</h1>
+          <p id="heroText" class="hero__lead">
+            Testen Sie Ihr HR-Wissen und entdecken Sie praxisnahe Studienangebote für moderne Personalarbeit.
+          </p>
+          <div class="prize-chip">
+            <span class="prize-chip__icon" aria-hidden="true">♥</span>
+            <span id="prizeLabel">Mitmachen und eine Manner-Schnitte als Sofortgewinn abholen.</span>
+          </div>
+        </div>
+
+        <div class="card intro-card">
+          <h2>So funktioniert’s</h2>
+          <ol id="introSteps" class="steps">
+            <li>Beantworten Sie fünf Fragen mit A, B oder C.</li>
+            <li>Nach jeder Auswahl geht es direkt zur nächsten Frage.</li>
+            <li>Am Schluss sehen Sie Ihr Ergebnis und alle Auflösungen.</li>
+          </ol>
+          <div class="meta-row">
+            <span id="durationLabel" class="pill">Dauer: ca. 2 Minuten</span>
+            <span id="difficultyLabel" class="pill">Schwierigkeitsgrad: mittel</span>
+          </div>
+          <button id="startQuizBtn" class="button button--primary button--large" type="button">
+            Los geht’s
+          </button>
+        </div>
+      </section>
+
+      <section id="quiz" class="card quiz-card" aria-labelledby="questionText" aria-live="polite" hidden>
+        <div class="quiz-status">
+          <span id="questionCounter" class="pill">Frage 1 von 5</span>
+          <span id="answeredCounter" class="pill">0 beantwortet</span>
+        </div>
+        <div class="progress" aria-hidden="true">
+          <div id="progressBar" class="progress__bar"></div>
+        </div>
+
+        <h2 id="questionText" tabindex="-1"></h2>
+        <fieldset class="answer-fieldset">
+          <legend class="sr-only">Antwort auswählen</legend>
+          <div id="answers" class="answers"></div>
+        </fieldset>
+
+        <div class="action-row">
+          <button id="nextQuestionBtn" class="button button--primary button--large" type="button" disabled>
+            Nächste Frage <span aria-hidden="true">→</span>
+          </button>
+        </div>
+      </section>
+
+      <section id="result" class="result-layout" aria-labelledby="resultTitle" aria-live="polite" tabindex="-1" hidden>
+        <div class="card result-card">
+          <p class="eyebrow">Geschafft!</p>
+          <h2 id="resultTitle">Ihr Ergebnis</h2>
+          <p id="resultMessage" class="result-message"></p>
+          <p id="scoreText" class="score-text"></p>
+
+          <div class="instant-prize">
+            <span class="instant-prize__icon" aria-hidden="true">♥</span>
+            <div>
+              <strong id="resultPrizeTitle">Danke fürs Mitmachen!</strong>
+              <p id="resultPrizeText">Holen Sie sich jetzt Ihre Manner-Schnitte bei unserem Messeteam ab.</p>
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button id="restartBtn" class="button button--primary" type="button">Nochmal spielen</button>
+            <button id="toggleSolutionsBtn" class="button button--secondary" type="button" aria-expanded="false">
+              Lösungen anzeigen
+            </button>
+          </div>
+
+          <div id="solutions" class="solutions" hidden></div>
+        </div>
+
+        <aside class="card study-card" aria-labelledby="studyTitle">
+          <p class="eyebrow">HR weiterdenken</p>
+          <h2 id="studyTitle">Studieren an der FHWien der WKW</h2>
+          <p id="studyText">Praxisnahes Wissen für Menschen, die HR und Organisationen aktiv gestalten wollen.</p>
+          <ul class="study-list">
+            <li><strong>Bachelor Personalmanagement</strong><span>Vollzeit oder berufsbegleitend</span></li>
+            <li><strong>Master Organisations- &amp; Personalentwicklung</strong><span>Berufsbegleitend</span></li>
+          </ul>
+
+          <div class="qr-area">
+            <div class="qr-placeholder" aria-label="Platzhalter für einen noch zu ersetzenden QR-Code">
+              <img class="qr-placeholder__image" src="assets/qr-code-platzhalter.png" alt="" aria-hidden="true">
+              <span id="qrPlaceholderLabel" class="qr-placeholder__label">QR-CODE<br>PLATZHALTER</span>
+            </div>
+            <p class="qr-note">Der finale QR-Code wird vor der Messe ergänzt.</p>
+          </div>
+
+          <a id="studyLink" class="text-link" href="https://www.fh-wien.ac.at/fachhochschule/studienbereiche/human-resources-organization/" target="_blank" rel="noopener noreferrer">
+            HR-Studiengänge entdecken <span aria-hidden="true">↗</span>
+          </a>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>FHWien der WKW · Währinger Gürtel 97 · 1180 Wien</p>
+      <a href="https://www.fh-wien.ac.at/" target="_blank" rel="noopener noreferrer">www.fh-wien.ac.at</a>
+    </footer>
+    <div class="farbstrahl" aria-hidden="true"></div>
+  </div>
+</body>
+</html>
