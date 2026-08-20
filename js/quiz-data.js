@@ -6,7 +6,7 @@ window.QUIZ_DATA = {
   eventLabel: "HR Inside Summit 2026",
   headline: "Für alle, die HR nicht nur verwalten, sondern gestalten.",
   heroText: "Testen Sie Ihr HR-Wissen und entdecken Sie praxisnahe Studienangebote für moderne Personalarbeit.",
-  prizeLabel: "Mitmachen und eine Manner-Schnitte als Sofortgewinn abholen.",
+  prizeLabel: "Mitmachen und eine süße Überraschung als Sofortgewinn abholen.",
   durationLabel: "Dauer: ca. 2 Minuten",
   difficultyLabel: "Schwierigkeitsgrad: mittel",
   introSteps: [

@@ -1,3 +1,34 @@
+@font-face {
+  font-family: "FHW Franklin Gothic Headline";
+  src:
+    local("ITC Franklin Gothic Book Extra Compressed"),
+    local("ITC Franklin Gothic Std Book Extra Compressed"),
+    local("Franklin Gothic Book Extra Compressed");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FHW Franklin Gothic Demi";
+  src:
+    local("ITC Franklin Gothic Demi"),
+    local("Franklin Gothic Demi");
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FHW Franklin Gothic Book";
+  src:
+    local("ITC Franklin Gothic Book"),
+    local("Franklin Gothic Book");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --fhw-blue: #102d5d;
   --fhw-blue-dark: #091d3d;
@@ -13,6 +44,9 @@
   --shadow: 0 16px 44px rgba(16, 45, 93, 0.11);
   --radius: 18px;
   --content-width: 1120px;
+  --font-headline: "FHW Franklin Gothic Headline", "Franklin Gothic Medium Cond", "Arial Narrow", sans-serif;
+  --font-subheadline: "FHW Franklin Gothic Demi", "Franklin Gothic Demi", Arial, sans-serif;
+  --font-body: "FHW Franklin Gothic Book", "Franklin Gothic Book", Arial, sans-serif;
 }
 
 * {
@@ -30,8 +64,29 @@ body {
   margin: 0;
   color: var(--text);
   background: var(--surface-soft);
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.5;
+}
+
+h1,
+h2 {
+  font-family: var(--font-headline);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.button,
+.splash__button,
+.eyebrow,
+.site-header__title,
+.prize-chip,
+.pill,
+.answer__letter,
+.instant-prize strong,
+.solution__question,
+.study-list strong,
+.text-link {
+  font-family: var(--font-subheadline);
 }
 
 button,
@@ -150,9 +205,9 @@ a {
   margin: 0;
   color: var(--fhw-blue);
   font-size: clamp(1.8rem, 6.2cqw, 4.2rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1.08;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .splash__button {
@@ -260,7 +315,7 @@ a {
   color: var(--fhw-blue);
   font-size: clamp(2.4rem, 5vw, 4.8rem);
   line-height: 1.04;
-  letter-spacing: -0.045em;
+  letter-spacing: 0;
 }
 
 .hero__lead {
