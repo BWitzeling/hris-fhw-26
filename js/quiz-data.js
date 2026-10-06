@@ -23,7 +23,7 @@ window.QUIZ_DATA = {
 
   questions: [
     {
-      question: "Was zeichnet HR als strategische:n Partner:in der Unternehmensführung aus?",
+      question: "Was zeichnet die HR als strategische Partnerin der Unternehmensführung aus?",
       options: [
         "HR konzentriert sich ausschließlich auf Verträge und Personalakten.",
         "HR überlässt Personalentscheidungen vollständig dem Bauchgefühl der Führungskräfte.",
