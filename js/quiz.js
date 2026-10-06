@@ -50,7 +50,22 @@
     setText("durationLabel", data.durationLabel);
     setText("difficultyLabel", data.difficultyLabel);
     setText("resultPrizeTitle", data.resultPrizeTitle);
-    setText("resultPrizeText", data.resultPrizeText);
+    const resultPrizeText = document.getElementById("resultPrizeText");
+    if (resultPrizeText && typeof data.resultPrizeText === "string") {
+      const emphasis = data.resultPrizeEmphasis;
+      const emphasisIndex = typeof emphasis === "string" ? data.resultPrizeText.indexOf(emphasis) : -1;
+      if (emphasisIndex >= 0 && emphasis.length > 0) {
+        const strong = document.createElement("strong");
+        strong.textContent = emphasis;
+        resultPrizeText.replaceChildren(
+          document.createTextNode(data.resultPrizeText.slice(0, emphasisIndex)),
+          strong,
+          document.createTextNode(data.resultPrizeText.slice(emphasisIndex + emphasis.length))
+        );
+      } else {
+        resultPrizeText.textContent = data.resultPrizeText;
+      }
+    }
     setText("studyText", data.studyText);
 
     const introSteps = document.getElementById("introSteps");

@@ -15,7 +15,8 @@ window.QUIZ_DATA = {
     "Am Schluss sehen Sie Ihr Ergebnis und alle Auflösungen."
   ],
   resultPrizeTitle: "Danke fürs Mitmachen!",
-  resultPrizeText: "Holen Sie sich jetzt Ihre Manner-Schnitte bei unserem Messeteam ab.",
+  resultPrizeText: "Holen Sie sich jetzt Ihre süße Überraschung bei unserem Messeteam ab.",
+  resultPrizeEmphasis: "süße Überraschung",
   studyText: "Praxisnahes Wissen für Menschen, die HR und Organisationen aktiv gestalten wollen.",
   studyUrl: "https://www.fh-wien.ac.at/fachhochschule/studienbereiche/human-resources-organization/",
   newsletterUrl: "https://www.fh-wien.ac.at/newsletter-informieren-und-studieren-anmeldung/",

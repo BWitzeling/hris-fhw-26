@@ -39,4 +39,4 @@ Da alle Pfade relativ sind, funktioniert die Seite sowohl in einem Projekt-Repos
 - Keine externen Schriftarten, Bibliotheken oder Tracking-Dienste
 - Für Maus, Tastatur und Touch-Bedienung ausgelegt
 - Responsive für Smartphone, Tablet, Desktop und großformatige Touchscreens
-- Die Manner-Schnitte ist ein Sofortgewinn unabhängig vom Quiz-Ergebnis; es gibt keine Verlosung.
+- Die süße Überraschung ist ein Sofortgewinn unabhängig vom Quiz-Ergebnis; es gibt keine Verlosung.
