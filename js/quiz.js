@@ -42,6 +42,13 @@
     }
   }
 
+  function replaceChildren(element, ...children) {
+    while (element.firstChild) {
+      element.removeChild(element.firstChild);
+    }
+    children.forEach((child) => element.appendChild(child));
+  }
+
   function applyContent() {
     setText("eventLabelHeader", data.eventLabel);
     setText("heroTitle", data.headline);
@@ -57,7 +64,7 @@
       if (emphasisIndex >= 0 && emphasis.length > 0) {
         const strong = document.createElement("strong");
         strong.textContent = emphasis;
-        resultPrizeText.replaceChildren(
+        replaceChildren(resultPrizeText,
           document.createTextNode(data.resultPrizeText.slice(0, emphasisIndex)),
           strong,
           document.createTextNode(data.resultPrizeText.slice(emphasisIndex + emphasis.length))
@@ -69,7 +76,7 @@
     setText("studyText", data.studyText);
 
     const introSteps = document.getElementById("introSteps");
-    introSteps.replaceChildren();
+    replaceChildren(introSteps);
     data.introSteps.forEach((step) => {
       const item = document.createElement("li");
       item.textContent = step;
@@ -110,7 +117,7 @@
     state.questionIndex = 0;
     state.selectedIndex = null;
     state.answers = [];
-    elements.solutions.replaceChildren();
+    replaceChildren(elements.solutions);
     elements.solutions.hidden = true;
     elements.toggleSolutionsBtn.setAttribute("aria-expanded", "false");
     elements.toggleSolutionsBtn.textContent = "Lösungen anzeigen";
@@ -147,7 +154,7 @@
     elements.answeredCounter.textContent = `${state.answers.length} beantwortet`;
     elements.progressBar.style.width = `${(state.answers.length / data.questions.length) * 100}%`;
     elements.questionText.textContent = question.question;
-    elements.answers.replaceChildren();
+    replaceChildren(elements.answers);
     elements.nextQuestionBtn.disabled = true;
     elements.nextQuestionBtn.textContent = isLastQuestion ? "Ergebnis anzeigen →" : "Nächste Frage →";
     state.selectedIndex = null;
@@ -172,7 +179,9 @@
       const text = document.createElement("span");
       text.textContent = option;
 
-      label.append(input, letter, text);
+      label.appendChild(input);
+      label.appendChild(letter);
+      label.appendChild(text);
       elements.answers.appendChild(label);
     });
 
@@ -234,11 +243,13 @@
       explanation.className = "solution__explanation";
       explanation.textContent = question.explanation;
 
-      solution.append(heading, status, explanation);
+      solution.appendChild(heading);
+      solution.appendChild(status);
+      solution.appendChild(explanation);
       fragment.appendChild(solution);
     });
 
-    elements.solutions.replaceChildren(fragment);
+    replaceChildren(elements.solutions, fragment);
   }
 
   function showResult() {
